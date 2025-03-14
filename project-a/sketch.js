@@ -5,13 +5,7 @@ Project A: Generative Creatures
 CCLaboratories Biodiversity Atlas 
 */
 
-let x;
-let y;
-let R = 100;
-let vNumber = 200;
-let smoothness = 0.5;
-
-let creatureX, creatureY;
+let creatureX, creatureY;//i made a change right now
 let speedX, speedY;
 let creatureSize = 100;
 let breatheSpeed = 0.05;
@@ -22,8 +16,8 @@ let eatingState = 0;
 let frameCounter = 0;
 
 function setup() {
-    let canvas = createCanvas(800, 500);
-    canvas.id("p5-canvas");
+  let canvas = createCanvas(800, 500);
+   canvas.id("p5-canvas");
     canvas.parent("p5-canvas-container");
   creatureX = width / 2;
   creatureY = height / 2;
@@ -213,5 +207,3 @@ function drawCheese() {
   noStroke();
   ellipse(cheeseX, cheeseY, 20, 20);
 }
-
-
