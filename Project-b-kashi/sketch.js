@@ -271,7 +271,7 @@ function keyPressed() {
   if (currentScene > 0 && (key === 'b' || key === 'B')) currentScene = 0;
 }
 
-// --- PATTERN CLASS (simple red circles only) ---
+//  PATTERN CLASS (simple red circles only) 
 class Pattern {
   constructor(x, y, type) {
     this.x = x;
@@ -288,7 +288,7 @@ class Pattern {
     pop();
   }
   isClicked(mx, my) {
-    let d = dist(mx, my, this.x, this.y);
+    let d = dist(mx, my, this.x, this.y); // use dist to calculate distance
     if (d < this.r / 2) {
       this.isInside = true;
     } else {
@@ -327,6 +327,7 @@ class Bird {
       this.zoomX = lerp(this.zoomX, targetX, 0.1);
       this.zoomY = lerp(this.zoomY, targetY, 0.1);
       this.zoomSize = lerp(this.zoomSize, 250, 0.08);
+      //abs for absolute value, to make zoom effect more smooth
       if (dist(this.zoomX, this.zoomY, targetX, targetY) < 2 && abs(this.zoomSize-250) < 3) {
         this.hasEscaped = true;
       }
@@ -350,7 +351,8 @@ class Bird {
       by = this.y;
       bs = this.size;
     }
-    let d = dist(mx, my, bx, by);
+    let d = dist(mx, my, bx, by); // use dist to calculate distance
+    // Check if the mouse is inside the bird's area
     if (d < bs) {
       this.isInside = true;
     } else {
@@ -596,7 +598,7 @@ function drawKashiTempleScene() {
   pop();
 }
 
-// Helper function to draw a shikhara (temple spire)
+// Function to draw a shikhara (temple spire)
 function drawShikhara(x, y, width, height, color) {
   push();
   translate(x, y);
